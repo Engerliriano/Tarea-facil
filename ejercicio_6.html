@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio6</title>
+</head>
+<body>
+  <img height="200" src="imagenes de curso/circulo.jpg" alt="esfera">
+  <h2>Ejercicio 6</h2>
+  <h4>Crea un script que pida al usuario el diámetro de una rueda y su grosor (en metros) y a través de condicionales if realice las siguientes operaciones:</h4>
+
+  <p>a) Si el diámetro es superior a 1.4 debe mostrarse el mensaje “La rueda es para un vehículo grande”. Si es menor o igual a 1.4 pero mayor que 0.8 debe mostrarse el mensaje “La rueda es para un vehículo mediano”. Si no se cumplen ninguna de las condiciones anteriores debe mostrarse por pantalla el mensaje “La rueda es para un vehículo pequeño”.</p>  
+   
+  <p> b) Si el diámetro es superior a 1.4 con un grosor inferior a 0.4, ó si el diámetro es menor o igual a 1.4 pero mayor que 0.8, con un grosor inferior a 0.25, deberá mostrarse el mensaje “El grosor para esta rueda es inferior al recomendado”  </p>
+
+  <input type="number" id="Diametro" placeholder="Diametro">
+  <input type="number" id="Grosor" placeholder="Grosor">
+  <button onclick="calcular()">Calcular</button>
+  <div id="divMsg">
+
+  </div>
+  <br>
+  <br>
+   <h2><a href="inicio.html">Regresar</a></h2>
+
+    <script>
+      function calcular() {
+        
+        let diametro = parseFloat( document.getElementById("Diametro").value);
+        let grosor =parseFloat (document.getElementById("Grosor").value);
+        let mensajeD = "";
+        let mensajeG = "";
+        
+        if (diametro > 1.4){
+          mensajeD = "La rueda es para un vehiculo grande."
+        }
+        else if (diametro <= 1.4 && diametro > 0.8) {
+          mensajeD = "La rueda es para un vehiculo mediano.";
+        }
+        else {
+          mensajeD = "La rueda es para un vehiculo pequeño.";
+        }
+
+        if ((diametro > 1.4 && grosor < 0.4) || diametro <= 1.4 && diametro > 0.8 && grosor < 0.25) {
+            mensajeG = "El grosor para esta rueda es inferior al recomendado.";
+        }
+
+        document.getElementById("divMsg").innerHTML = mensajeD + "<br>" + mensajeG;
+      }      
+
+
+
+    </script> 
+</body>
+</html>

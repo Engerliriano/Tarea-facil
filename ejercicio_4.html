@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 4</title>
+</head>
+<body>
+
+  <img height="200"  src="imagenes de curso/par.jpg" alt="imagen">
+
+  <h2>Ejercicio 4</h2>
+  <p><b><i>Diseñe un algoritmo que determine si un número es o no es, par positivo.</i></b></p>
+  <input type="number" id="numero" placeholder="Introducir numero">
+  <button onclick="verificar()">Verficar</button>
+  <div id="verif"> </div>
+  <br>
+  <br>
+  <h2><a href="inicio.html">Regresar</a></h2>
+  <script>
+    function verificar(){
+
+      let num=parseInt(document.getElementById("numero").value);
+      let result="";
+      if (num % 2 == 0) {
+          result="El numero es un par."
+      }else{
+        result="El numero es un impar."
+      }
+
+      document.getElementById("verif").innerHTML=result;
+    }
+
+
+  </script>
+
+</body>
+</html>

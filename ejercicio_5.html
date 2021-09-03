@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 5</title>
+</head>
+<body>
+
+  <img  src="imagenes de curso/Bravo.jpg" alt="imagen de supermercado Bravo">
+
+  <h2>Ejercicio 5</h2>
+  <p><b><i>Un supermercado ha puesto en oferta la venta al por mayor de cierto producto, ofreciendo un descuento del 15% por la compra de más de 3 docenas y 10% en caso contrario. Además por la compra de más de 3 docenas se obsequia una unidad del producto por cada docena en exceso sobre 3.</i></b>  </p>
+
+  <p><b><i>Diseñe un algoritmo que determine el monto de la compra, el monto del descuento, el monto a pagar y el número de unidades de obsequio por la compra de cierta cantidad de docenas del producto.</i></b> </p>
+
+  <input type="text" id="nombre" placeholder="Nombre del producto" > 
+  <input type="number" id="docena" placeholder="Docenas">
+  <button onclick="calcular()">Calcular</button>
+
+  <div id="ver"></div>
+  <table>
+    <tr>
+      <th>Nombre del producto</th>
+      <td id="tx_nombre">??</td>
+    </tr>
+    <tr>
+      <th>Cantidad de docenas</th>
+      <td id="tx_docena">??</td>
+    </tr>
+    <tr>
+      <th>Cantidad de productos</th>
+      <td id="tx_producto">??</td>
+    </tr>
+    <tr>
+      <th>Monto a pagar</th>
+      <td id="tx_pagar">??</td>
+    </tr>
+    <tr>
+      <th>Cantidad de obsequio</th>
+      <td id="tx_obsequia">??</td>
+    </tr>
+  </table>
+  <script>
+
+    function aplicar(destino, valor){
+      document.getElementById(destino).innerHTML=valor;
+    }
+
+    
+    function calcular(){
+      
+      let docenas=parseInt(document.getElementById("docena").value);
+      let obsequio 
+      let cant_p= docenas * 12
+      let precio=12;
+      let nombre=document.getElementById("nombre").value
+      let result="";
+
+      var  total = precio * docenas;
+
+      if (docenas > 3) {
+        total = total * 0.15 
+        obsequio = docenas -3
+      }
+      else {
+        total =total * 0.10
+          obsequio= 0
+      }
+      
+      aplicar("tx_nombre",nombre)
+      aplicar("tx_docena", docenas.toLocaleString("en-Es"));
+      aplicar("tx_producto", cant_p.toLocaleString("en-Es"));
+      aplicar("tx_pagar",Math.ceil(total).toLocaleString("en-Es"));
+      aplicar("tx_obsequia", obsequio.toLocaleString("en-Es"));
+
+
+
+       
+      }
+
+
+        
+   
+    
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 3</title>
+</head>
+<body>
+  <img height="200" src="imagenes de curso/estacionamiento.jpg" alt="imagen de estacionamiento">
+  
+  <h2>Ejercicio 3</h2>
+  <p><b><i>En un estacionamiento cobran $/. 1.500 por hora o fracción. Diseñe un algoritmo que determine cuánto debe pagar un cliente por el estacionamiento de su vehículo, conociendo el tiempo de estacionamiento en horas y minutos.</i></b></p>
+
+  <input type="number" id="hora" placeholder="Horas">
+  <input type="number" id="minutos" placeholder="Minutos">
+  <button onclick="estacionamiento()">Calcular</button>
+
+  <div id="mostrar" ></div>
+  <br>
+  <br>
+
+  <h2><a href="inicio.html">Regresar</a></h2>
+  <script>
+
+    function estacionamiento(){
+
+      let hora=parseInt(document.getElementById("hora").value);
+      let minutos=parseInt(document.getElementById("minutos").value);
+      const precioH=1500;
+      const precioM=25;
+      let mensaje= "";
+
+      if(hora && minutos > 0){
+        mensaje="El monto a pagar es de " + (precioH * hora + precioM * minutos).toLocaleString("en-Es") + " pesos.";
+      }
+      else if (minutos > 0 ){
+        mensaje="El monto a pagar es de " + (precioM * minutos).toLocaleString("en-Es") + " pesos.";
+      }
+      else {
+        mensaje="El monto a pagar es de " + (precioH * hora).toLocaleString("en-Es") + " pesos.";
+      }
+    
+      document.getElementById("mostrar").innerHTML= mensaje;
+    
+    }
+
+  </script>
+</body>
+</html>
